@@ -10,7 +10,6 @@ class CategoriesScreen extends StatelessWidget {
     return  Scaffold(
       appBar: AppBar(
         title: Text('Categories'),
-
         backgroundColor: GlobalColors.mainColor,
       ),
       body: GridView.count(
