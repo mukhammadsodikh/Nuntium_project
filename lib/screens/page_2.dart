@@ -11,33 +11,37 @@ class Page2 extends StatelessWidget {
         padding: const EdgeInsets.all(30.0),
         child: Center(
           child: SingleChildScrollView(
-            child: Column(
-              children:  [
-                Image.asset(
-                  'assets/images/page2.jpg',
-                  height: 500,
-                ),
-                const SizedBox(height: 0),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12)
+              ),
+              child: Column(
+                children:  [
 
-                const Text(
-                  'Front Line',
-                  style: TextStyle(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold
+                  Image.asset(
+                    'assets/images/page2.jpg',
+                    height: 500,
                   ),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Focusing on what is newsworthy instead of '
-                      'what is trending',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.black54,
+                  const Text(
+                    'Front Line',
+                    style: TextStyle(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold
+                    ),
                   ),
-                ),
-                const SizedBox(height: 30),
-              ],
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Focusing on what is newsworthy instead of '
+                        'what is trending',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.black54,
+                    ),
+                  ),
+                  const SizedBox(height: 30),
+                ],
+              ),
             ),
           ),
         ),

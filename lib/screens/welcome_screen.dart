@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:nuntium/screens/category_screen.dart';
 
@@ -21,6 +22,7 @@ class WelcomeScreen extends StatelessWidget {
               Image.asset(
                 'assets/images/welcome.png',
                 height: 500,
+                fit: BoxFit.cover,
               ),
 
               const Center(
@@ -34,6 +36,7 @@ class WelcomeScreen extends StatelessWidget {
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
                           color: Colors.black,
+                            decoration: TextDecoration.none
                         ),
                       ),
                     ),
@@ -43,6 +46,7 @@ class WelcomeScreen extends StatelessWidget {
                       style: TextStyle(
                         fontSize: 18,
                         color: Colors.black54,
+                        decoration: TextDecoration.none
                       ),
                     ),
                     SizedBox(height: 30),
@@ -52,23 +56,45 @@ class WelcomeScreen extends StatelessWidget {
               ),
               const SizedBox(height: 100),
               Hero(
-                tag: "login_btn",
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const CategoriesScreen()));
+                tag: "Get Started",
+                child: Container(
+                  width: 336,
+                  height: 56,
+                  margin: const EdgeInsets.only(top: 50, left: 1),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        PageRouteBuilder(
+                          pageBuilder: (context, animation, secondaryAnimation) {
+                            return CategoriesScreen(
+                              onClick: (Category category) {},
+                            );
+                          },
 
-                  },
-                  child: Text(
-                    "Get Started".toUpperCase(),
-                    style: const TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      primary: Colors.blue,
+                      onPrimary: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: Text(
+                      "next".toUpperCase(),
+                      style: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              )
             ],
 
           ),

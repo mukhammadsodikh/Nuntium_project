@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/category_screen.dart';
@@ -11,7 +12,7 @@ class ButtonGlobal extends StatelessWidget {
     return  InkWell(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context){
-          return const CategoriesScreen();
+          return  CategoriesScreen(onClick: (Category category) {  },);
         },
         ),
         );
